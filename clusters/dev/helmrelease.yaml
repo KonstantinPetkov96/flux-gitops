@@ -7,6 +7,7 @@ spec:
   interval: 1m
   driftDetection:
     mode: enabled
+  reconcileStrategy: Revision
   chart:
     spec:
       chart: ./charts/helm-guestbook
