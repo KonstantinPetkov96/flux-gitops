@@ -12,3 +12,5 @@ spec:
         kind: GitRepository
         name: flux-repo
       version: 0.1.0
+  values:
+    replicaCount: 4
