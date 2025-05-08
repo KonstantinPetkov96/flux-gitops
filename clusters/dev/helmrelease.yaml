@@ -7,7 +7,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: ./clusters/dev/helm-guestbook
+      chart: ./charts/helm-guestbook
       sourceRef:
         kind: GitRepository
         name: flux-repo
