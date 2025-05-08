@@ -5,10 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
+  driftDetection:
+    mode: enabled
   chart:
     spec:
-      driftDetection:
-        mode: enabled
       chart: ./charts/helm-guestbook
       sourceRef:
         kind: GitRepository
