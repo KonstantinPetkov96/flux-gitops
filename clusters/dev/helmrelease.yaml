@@ -7,7 +7,6 @@ spec:
   interval: 1m
   driftDetection:
     mode: enabled
-  reconcileStrategy: Revision
   chart:
     spec:
       chart: ./charts/helm-guestbook
@@ -15,3 +14,4 @@ spec:
         kind: GitRepository
         name: flux-repo
       version: 0.1.3
+      reconcileStrategy: Revision
