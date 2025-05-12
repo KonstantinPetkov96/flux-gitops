@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: guestbook-dev
+  name: guestbook-qa
   namespace: flux-system
 spec:
   interval: 1m
   timeout: 2m
-  targetNamespace: guestbook-dev
+  targetNamespace: guestbook-qa
   driftDetection:
     mode: enabled
   chart:

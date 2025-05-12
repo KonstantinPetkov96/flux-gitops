@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: guestbook-dev
+  name: guestbook-prod
   namespace: flux-system
 spec:
   interval: 1m
   timeout: 2m
-  targetNamespace: guestbook-dev
+  targetNamespace: guestbook-prod
   driftDetection:
     mode: enabled
   chart:
@@ -15,5 +15,5 @@ spec:
       sourceRef:
         kind: GitRepository
         name: flux-repo
-      version: "*"
+      version: "0.1.2"
       #reconcileStrategy: Revision
