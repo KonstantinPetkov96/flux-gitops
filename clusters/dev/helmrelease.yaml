@@ -16,4 +16,7 @@ spec:
         kind: GitRepository
         name: flux-repo
       version: "*"
-      #reconcileStrategy: Revision
+      reconcileStrategy: Revision
+      valuesFiles:
+        - values.yaml
+        - values-dev.yaml   
