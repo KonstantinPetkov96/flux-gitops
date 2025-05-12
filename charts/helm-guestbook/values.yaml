@@ -45,3 +45,10 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+ingress-nginx:
+  controller:
+    service:
+      type: ClusterIP
+    publishService:
+      enabled: false
