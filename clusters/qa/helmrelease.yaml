@@ -18,5 +18,5 @@ spec:
       version: "*"
       reconcileStrategy: Revision
       valuesFiles:
-        - values.yaml
-        - values-qa.yaml     
+        - charts/helm-guestbook/values.yaml
+        - charts/helm-guestbook/values-qa.yaml     
