@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: guestbook-dev
+  namespace: flux-system
+spec:
+  interval: 1m
+  timeout: 2m
+  targetNamespace: guestbook-dev
+  driftDetection:
+    mode: enabled
+  chart:
+    spec:
+      chart: nginx
+      version: 20.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+  values:
+    service:
+      type: ClusterIP
