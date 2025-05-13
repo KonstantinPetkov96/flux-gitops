@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: nginx-demo
+  name: podinfo
   namespace: flux-system
 spec:
   interval: 1m
@@ -9,13 +9,16 @@ spec:
   targetNamespace: guestbook-dev
   driftDetection:
     mode: enabled
+    ignore:
+    - paths: ["/spec/replicas"]
+      target:
+        kind: Deployment
   chart:
     spec:
-      chart: nginx
-      version: 20.0.1
+      chart: podinfo
+      version: '6.5.*'
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: podinfo
   values:
-    service:
-      type: ClusterIP
+    replicaCount: 2
